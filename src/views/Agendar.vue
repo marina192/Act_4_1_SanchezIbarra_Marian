@@ -4,7 +4,6 @@
   <Contenido>
     <div class="agendar-layout">
 
-      <!-- IZQUIERDA: CARD DEL TUTOR -->
       <div class="tutor-info">
         <h2>Agendando con:</h2>
 
@@ -14,6 +13,7 @@
           :subject="tutor.subject"
           :description="tutor.description"
           :availability="tutor.availability"
+          :mostrarBoton="false"
         />
 
         <p v-else class="no-encontrado">
@@ -21,7 +21,6 @@
         </p>
       </div>
 
-      <!-- DERECHA: CALENDARIO -->
       <div class="calendario">
         <Calendario />
       </div>
@@ -88,7 +87,6 @@ const tutores = [
   }
 ];
 
-// Busca el tutor según el ID
 const tutor = tutores.find(t => t.id === tutorId);
 </script>
 
@@ -97,11 +95,11 @@ const tutor = tutores.find(t => t.id === tutorId);
   margin-top: 2rem;
   display: flex;
   gap: 3rem;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
 }
 
-/* IZQUIERDA */
 .tutor-info {
   flex: 0 0 300px;
 }

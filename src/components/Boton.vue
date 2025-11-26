@@ -10,13 +10,13 @@
 </template>
 
 <script setup>
-defineProps({
-  variant: {
-    type: String,
-    default: "primary" // estilos: primary, secondary, etc.
-  }
-});
-const emit = defineEmits(['click'])
+  defineProps({
+    variant: {
+      type: String,
+      default: "primary" // estilos: primary, secondary, etc.
+    }
+  });
+  const emit = defineEmits(['click'])
 </script>
 
 <style scoped>

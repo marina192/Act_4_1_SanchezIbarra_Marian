@@ -20,20 +20,19 @@
 
 <script setup>
 import { ref } from 'vue'
-import { useRouter } from 'vue-router'   // ← IMPORTANTE
+import { useRouter } from 'vue-router'
 
 import Encabezado from '../components/Encabezado.vue'
 import Contenido from '../components/Contenido.vue'
 import BarraBusqueda from '../components/BarraBusqueda.vue'
 import CardTutor from '../components/CardTutor.vue'
 
-const router = useRouter() // ← SIN ESTO NO FUNCIONA
+const router = useRouter()
 
 function agendar(tutor) {
   router.push(`/agendar/${tutor.id}`)
 }
 
-// Lista de tutores (ejemplo)
 const tutores = ref([
   {
     id: 1,
@@ -86,5 +85,7 @@ const tutores = ref([
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
 }
 </style>

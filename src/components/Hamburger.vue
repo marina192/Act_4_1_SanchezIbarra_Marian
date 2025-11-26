@@ -15,25 +15,24 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+  import { computed } from 'vue';
 
-const props = defineProps({
-  modelValue: { type: Boolean, default: false }, // estado abierto/cerrado
-  size: { type: String, default: 'md' },         // xs | sm | md | lg
-  variant: { type: String, default: 'default' }, // default | primary | contrast
-  ariaLabel: { type: String, default: 'Abrir menú' },
-  controlsId: { type: String, default: '' }      // id del panel que controla
-});
-const emit = defineEmits(['update:modelValue', 'toggle']);
+  const props = defineProps({
+    modelValue: { type: Boolean, default: false }, // estado abierto/cerrado
+    size: { type: String, default: 'md' },         // xs | sm | md | lg
+    variant: { type: String, default: 'default' }, // default | primary | contrast
+    ariaLabel: { type: String, default: 'Abrir menú' },
+    controlsId: { type: String, default: '' }      // id del panel que controla
+  });
+  const emit = defineEmits(['update:modelValue', 'toggle']);
 
-const toggle = () => {
-  emit('update:modelValue', !props.modelValue);
-  emit('toggle', !props.modelValue);
-};
+  const toggle = () => {
+    emit('update:modelValue', !props.modelValue);
+    emit('toggle', !props.modelValue);
+  };
 </script>
 
 <style scoped>
-/* Tokens */
 :root {
   --hamburger-size-xs: 18px;
   --hamburger-size-sm: 22px;

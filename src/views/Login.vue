@@ -34,7 +34,6 @@ function login() {
 </script>
 
 <style scoped>
-/* Contenedor general centrado */
 .login-wrapper {
   min-height: 80vh;
   display: flex;
@@ -42,7 +41,6 @@ function login() {
   align-items: center;
 }
 
-/* Tarjeta principal */
 .login-card {
   background: #ffffff;
   padding: 40px 45px;
@@ -51,7 +49,6 @@ function login() {
   width: 360px;
 }
 
-/* Título */
 .login-card h2 {
   text-align: center;
   margin-bottom: 30px;
@@ -59,12 +56,10 @@ function login() {
   font-weight: 600;
 }
 
-/* Espacio entre inputs */
 .input-space {
   margin-bottom: 18px;
 }
 
-/* Botón estilizado */
 .btn-login {
   width: 100%;
   margin-top: 10px;

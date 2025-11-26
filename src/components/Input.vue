@@ -1,16 +1,3 @@
-<script setup>
-defineProps({
-  label: String,
-  type: {
-    type: String,
-    default: "text"
-  },
-  modelValue: String
-})
-
-const emit = defineEmits(["update:modelValue"])
-</script>
-
 <template>
   <div style="margin-bottom: 15px; display: flex; flex-direction: column;">
     <label>{{ label }}</label>
@@ -22,3 +9,16 @@ const emit = defineEmits(["update:modelValue"])
     >
   </div>
 </template>
+
+<script setup>
+  defineProps({
+    label: String,
+    type: {
+      type: String,
+      default: "text"
+    },
+    modelValue: String
+  })
+
+  const emit = defineEmits(["update:modelValue"])
+</script>

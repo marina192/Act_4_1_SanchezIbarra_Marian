@@ -48,74 +48,74 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+  import { ref, computed } from "vue";
 
-// Estado actual
-const today = new Date();
-const currentMonth = ref(today.getMonth());
-const currentYear = ref(today.getFullYear());
-const selectedDate = ref(null);
+  // Estado actual
+  const today = new Date();
+  const currentMonth = ref(today.getMonth());
+  const currentYear = ref(today.getFullYear());
+  const selectedDate = ref(null);
 
-// Nombres de días y meses
-const weekdays = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"];
-const months = [
-  "Enero","Febrero","Marzo","Abril","Mayo","Junio",
-  "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"
-];
+  // Nombres de días y meses
+  const weekdays = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"];
+  const months = [
+    "Enero","Febrero","Marzo","Abril","Mayo","Junio",
+    "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"
+  ];
 
-// Computed para nombre del mes
-const monthName = computed(() => months[currentMonth.value]);
+  // Computed para nombre del mes
+  const monthName = computed(() => months[currentMonth.value]);
 
-// Generar días del mes
-const daysInMonth = computed(() => {
-  const days = [];
-  const firstDay = new Date(currentYear.value, currentMonth.value, 1);
-  const lastDay = new Date(currentYear.value, currentMonth.value + 1, 0);
+  // Generar días del mes
+  const daysInMonth = computed(() => {
+    const days = [];
+    const firstDay = new Date(currentYear.value, currentMonth.value, 1);
+    const lastDay = new Date(currentYear.value, currentMonth.value + 1, 0);
 
-  for (let i = 1; i <= lastDay.getDate(); i++) {
-    days.push({
-      number: i,
-      date: new Date(currentYear.value, currentMonth.value, i)
-    });
-  }
-  return days;
-});
+    for (let i = 1; i <= lastDay.getDate(); i++) {
+      days.push({
+        number: i,
+        date: new Date(currentYear.value, currentMonth.value, i)
+      });
+    }
+    return days;
+  });
 
-// Funciones
-const prevMonth = () => {
-  if (currentMonth.value === 0) {
-    currentMonth.value = 11;
-    currentYear.value--;
-  } else {
-    currentMonth.value--;
-  }
-};
+  // Funciones
+  const prevMonth = () => {
+    if (currentMonth.value === 0) {
+      currentMonth.value = 11;
+      currentYear.value--;
+    } else {
+      currentMonth.value--;
+    }
+  };
 
-const nextMonth = () => {
-  if (currentMonth.value === 11) {
-    currentMonth.value = 0;
-    currentYear.value++;
-  } else {
-    currentMonth.value++;
-  }
-};
+  const nextMonth = () => {
+    if (currentMonth.value === 11) {
+      currentMonth.value = 0;
+      currentYear.value++;
+    } else {
+      currentMonth.value++;
+    }
+  };
 
-const isToday = (date) => {
-  return (
-    date.getDate() === today.getDate() &&
-    date.getMonth() === today.getMonth() &&
-    date.getFullYear() === today.getFullYear()
-  );
-};
+  const isToday = (date) => {
+    return (
+      date.getDate() === today.getDate() &&
+      date.getMonth() === today.getMonth() &&
+      date.getFullYear() === today.getFullYear()
+    );
+  };
 
-const isSelected = (date) => {
-  return selectedDate.value &&
-    date.toDateString() === selectedDate.value.toDateString();
-};
+  const isSelected = (date) => {
+    return selectedDate.value &&
+      date.toDateString() === selectedDate.value.toDateString();
+  };
 
-const selectDay = (date) => {
-  selectedDate.value = date;
-};
+  const selectDay = (date) => {
+    selectedDate.value = date;
+  };
 </script>
 
 <style scoped>

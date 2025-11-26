@@ -5,85 +5,96 @@
       <h1 class="encabezado-titulo">{{ titulo }}</h1>
     </div>
 
-    <nav class="menu">
+    <nav v-if="mostrarMenu" class="menu">
       <MenuItem
         v-for="item in items"
         :key="item.value"
         :label="item.label"
         :value="item.value"
-        :active="selected === item.value"
-        @select="handleSelect"
+        :active="isActive(item)"
+        @select="goTo(item)"
       />
     </nav>
   </header>
 </template>
 
 <script setup>
-import { ref } from "vue";
-import MenuItem from "./MenuItem.vue";
+  import { useRoute, useRouter } from "vue-router";
+  import MenuItem from "./MenuItem.vue";
 
-const props = defineProps({
-  titulo: {
-    type: String,
-    default: "Sistema de Tutorías"
-  },
-  items: {
-    type: Array,
-    default: () => [
-      { label: "Tutores", value: "home" },
-      { label: "Perfil", value: "profile" },
-      { label: "Configuración", value: "settings" }
-    ]
+  const props = defineProps({
+    titulo: {
+      type: String,
+      default: "Sistema de Tutorías"
+    },
+
+    mostrarMenu: {
+      type: Boolean,
+      default: true
+    },
+
+    items: {
+      type: Array,
+      default: () => [
+        { label: "Inicio", value: "/inicio" },
+        { label: "Tutores", value: "/tutores" },
+        { label: "Perfil" },
+        { label: "Configuración" }
+      ]
+    }
+  });
+
+  const route = useRoute();
+  const router = useRouter();
+
+  function isActive(item) {
+    return route.path.startsWith(item.value);
   }
-});
 
-const selected = ref("home");
-
-function handleSelect(value) {
-  selected.value = value;
-}
+  function goTo(item) {
+    router.push(item.value);
+  }
 </script>
 
 <style scoped>
-.encabezado {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  box-sizing: border-box;
+  .encabezado {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  padding: 0.5rem 2rem;
+    padding: 0.5rem 2rem;
+    border-bottom: 2px solid #ccc;
+    background: #002E5A;
+    color: white;
 
-  border-bottom: 2px solid #ccc;
-  background: #002E5A;
-  color: white;
+    z-index: 1000;
+    font-family: sans-serif;
+    font-size: 1rem;
+  }
 
-  z-index: 1000;
-  font-family: sans-serif;
-  font-size: 1rem;
-}
+  .encabezado-izquierda {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
 
-.encabezado-izquierda {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
+  .encabezado-logo {
+    height: 50px;
+  }
 
-.encabezado-logo {
-  height: 50px;
-}
+  .encabezado-titulo {
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
 
-.encabezado-titulo {
-  font-size: 1.6rem;
-  font-weight: bold;
-}
-
-.menu {
-  display: flex;
-  gap: 1rem;
-}
+  .menu {
+    display: flex;
+    gap: 1rem;
+  }
 </style>

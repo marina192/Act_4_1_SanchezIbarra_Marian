@@ -1,5 +1,4 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
 import Calendario from './components/Calendario.vue'
 import Encabezado from './components/Encabezado.vue'
 </script>
