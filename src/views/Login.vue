@@ -1,3 +1,9 @@
+<!--
+  Vista: Login.vue
+  Descripción:
+    Muestra la pantalla de la que harían uso los usuarios para iniciar sesión.
+-->
+
 <template>
   <!-- Encabezado sin menú -->
   <Encabezado :mostrarMenu="false" />

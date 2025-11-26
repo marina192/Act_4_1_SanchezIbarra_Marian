@@ -1,3 +1,10 @@
+<!--
+  Componente: ContenedorLogin.vue
+  Descripción:
+  Contenedor genérico con estilo de tarjeta usado únicamente para uniformar ciertos estilos
+  como el color y tamaño de la fuente usada en todo el contenido de la vista del login.
+-->
+
 <template>
   <div 
     style="

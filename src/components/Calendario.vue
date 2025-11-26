@@ -1,20 +1,17 @@
-/**
- * Calendario.vue
- * @component
- * @description Componente de calendario interactivo para agendar citas.
- * 
- * ## Funcionalidad
- * - Navegación entre meses (prevMonth, nextMonth).
- * - Selección de un día específico (selectDay).
- * - Resalta el día actual y el día seleccionado.
- * 
- * ## Uso
- * ```vue
- * <Calendario @day-selected="handleDaySelected" />
- * ```
- * 
- * @emits day-selected {Date} - Evento emitido cuando el usuario selecciona un día.
- */
+<!--
+  Componente: Calendario.vue
+  Descripción:
+  Calendario interactivo que permite navegar entre meses, visualizar los días del mes actual
+  y seleccionar una fecha. Muestra controles para avanzar y retroceder de mes, encabezados
+  de días de la semana y una cuadrícula con los días generados dinámicamente.
+
+  Características:
+  - Resalta el día actual.
+  - Marca la fecha seleccionada por el usuario.
+  - Navegación entre meses con manejo automático de cambio de año.
+  - Diseño adaptable y estilizado con CSS Grid.
+  - Generación reactiva mediante propiedades computadas (currentMonth, currentYear).
+-->
 
 <template>
   <div class="calendario">

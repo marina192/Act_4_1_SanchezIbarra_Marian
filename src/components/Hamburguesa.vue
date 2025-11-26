@@ -1,3 +1,12 @@
+<!--
+  Componente: Hamburguesa.vue
+  Descripción:
+  Menú de navegación para dispositivos móviles que muestra un botón tipo "hamburguesa"
+  y al hacer clic despliega un menú vertical con los ítems de navegación.
+  Características
+  - Recibe props: items (Array).
+-->
+
 <template>
   <div class="hamburger-menu">
     <!-- Botón hamburguesa -->

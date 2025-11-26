@@ -1,3 +1,14 @@
+<!--
+  Componente: Encabezado.vue
+  Descripción:
+  Barra superior responsiva que muestra el título del sistema, el logo institucional
+  y un menú de navegación. Cambia automáticamente entre un menú horizontal en caso
+  de encontrarse en un dispositivo con pantallas grandes y un menú tipo hamburguesa 
+  en caso de tratarse de un dispositivo de pantallas pequeñas como un móvil.
+  Características
+  -  Recibe props: titulo (String), mostrarMenu (Boolean), items (Array).
+-->
+
 <template>
   <header class="encabezado">
     <div class="encabezado-izquierda">

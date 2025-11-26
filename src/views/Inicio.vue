@@ -1,3 +1,10 @@
+<!--
+  Vista: Inicio.vue
+  Descripción:
+    Muestra la pantalla que se despliega después de hacer login, que es donde
+    se encuentra información de los cursos a los que se ha inscrito el alumno (CardCurso).
+-->
+
 <template>
   <Encabezado titulo="Cursos Inscritos" />
 

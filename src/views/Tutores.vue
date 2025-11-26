@@ -1,3 +1,10 @@
+<!--
+  Vista: Tutores.vue
+  Descripción:
+    Muestra la pantalla para buscar algún tutor entre toda la lista de tutores que
+    se encuentran disponibles (CardTutor).
+-->
+
 <template>
   <Encabezado titulo="Tutores" />
 

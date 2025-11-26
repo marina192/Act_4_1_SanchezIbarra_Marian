@@ -1,3 +1,12 @@
+<!--
+  Componente: Boton.vue
+  Descripción:
+  Botón redondeado reutilizable que permite mostrar cualquier contenido a través de <slot>.
+  Acepta una prop 'variant' para cambiar el estilo visual (por defecto 'primary').
+  Emite el evento 'click' hacia el componente padre.
+  Incluye estilos para las variantes 'primary' y 'secondary', con efectos hover.
+-->
+
 <template>
   <button
     class="btn-rounded"
@@ -23,13 +32,12 @@
 .btn-rounded {
   padding: 0.5rem 1rem;
   border: none;
-  border-radius: 999px; /* esquinas totalmente redondeadas */
+  border-radius: 999px;
   cursor: pointer;
   font-size: 1rem;
   transition: background 0.3s ease;
 }
 
-/* Variantes */
 .btn-rounded.primary {
   background: #0288d1;
   color: white;

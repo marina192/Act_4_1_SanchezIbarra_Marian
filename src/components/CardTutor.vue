@@ -1,3 +1,18 @@
+<!--
+  Componente: CardTutor.vue
+  Descripción:
+  Tarjeta visual para mostrar información básica e importante de un tutor académico, 
+  esta información incluye su nombre, materia que imparten, una descripción breve y la
+  disponibilidad con la que más cuentan regularmente junto con un boton en caso de que
+  se desee agendar.
+  Características:
+  - Recibe props: name (String), subject (String), description (String), 
+    availability (String), mostrarBoton (Boolean).
+  - Emite el evento "agendar" cuando se hace clic en el botón.
+  - Permite ocultar el botón para cuando se muestre en otras vistas donde solo se
+    necesita la información del tutor.
+-->
+
 <template>
   <div class="card">
     
@@ -46,7 +61,6 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   }
 
-  /* Foto circular */
   .photo {
     width: 90px;
     height: 90px;
@@ -55,7 +69,6 @@
     margin-bottom: 0.5rem;
   }
 
-  /* Textos */
   .name {
     font-size: 1.2rem;
     font-weight: bold;

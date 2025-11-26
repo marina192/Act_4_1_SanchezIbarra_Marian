@@ -1,3 +1,12 @@
+<!--
+  Componente: MenuItem.vue
+  Descripción:
+  Representa un ítem individual de un menú, que puede ser seleccionado y resalta visualmente
+  en caso de encontrarse activo en la pestaña correspondiente.
+  Características:
+  - Recibe props: label (String), value (String), active (Boolean).
+-->
+
 <template>
   <div
     class="menu-item"

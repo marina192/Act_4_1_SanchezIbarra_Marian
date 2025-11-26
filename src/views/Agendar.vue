@@ -1,3 +1,11 @@
+<!--
+  Vista: Agendar.vue
+  Descripción:
+    Muestra la pantalla para agendar una tutoría con un tutor específico.
+    Incluye información del tutor seleccionado (CardTutor) y un calendario (Calendario)
+    para elegir la fecha.
+-->
+
 <template>
   <Encabezado titulo="Agendar Tutoría" />
 
@@ -108,7 +116,6 @@ const tutor = tutores.find(t => t.id === tutorId);
   margin-bottom: 0.5rem;
 }
 
-/* DERECHA */
 .calendario {
   flex: 0 0 400px;
 }

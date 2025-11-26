@@ -1,3 +1,11 @@
+<!--
+  Componente: Input.vue
+  Descripción:
+  Componente de campo de entrada (input) con label.
+  Características:
+  - Recibe props: label (String), type (String), modelValue (String).
+-->
+
 <template>
   <div style="margin-bottom: 15px; display: flex; flex-direction: column;">
     <label>{{ label }}</label>

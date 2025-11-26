@@ -1,3 +1,15 @@
+<!--
+  Componente: CardCurso.vue
+  Descripción:
+   Tarjeta visual para mostrar información básica de un curso al que se encuentra inscrito
+   el alumno actualmente junto con su progreso, cuenta con información como el nombre, 
+   grupo y su indicador de progreso. Incluye un ícono únicamente representativo y su barra 
+   de progreso.
+   Características:
+   - Recibe props: name (String), group (String) y progress (Number).
+   - Muestra una barra de progreso con animación basada en el porcentaje recibido.
+-->
+
 <template>
   <div class="course-card">
     <div class="course-header">
@@ -25,9 +37,9 @@
 
 <script setup>
     defineProps({
-    name: String,
-    group: String,
-    progress: Number
+        name: String,
+        group: String,
+        progress: Number
     });
 </script>
 
